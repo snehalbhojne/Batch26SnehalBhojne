@@ -1,39 +1,52 @@
 /*WAP to display prime numbers between the user specified range*/
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+int checkPrimeNumber(int);
 
+int main() {
+    int n1, n2;
+    bool flag;
 
-int isprime(int n1,int n2)
-{
-	int i,count=0;
-	for(i=n1;i<=n2;i++)
-	{
-		if(n1%i==0)
-		count++;
-	}
-	if(count==2)
-	{
-		cout<<"  "<<i;
-	}
-	return i;
-	
-	
+    cout << "Enter two positive integers: ";
+    cin >> n1 >> n2;
+
+    
+    if (n1 > n2) {
+      n2 = n1 + n2;
+      n1 = n2 - n1;
+      n2 = n2 - n1;
+    }
+
+    cout << "Prime numbers between " << n1 << " and " << n2 << " are: ";
+
+    for(int i = n1+1; i < n2; ++i) {
+        
+        flag = checkPrimeNumber(i);
+
+        if(flag)
+            cout << i << " ";
+    }
+
+    return 0;
 }
 
-int main()
-{
-	int n1,n2,d;
-	cout<<"Enter n1:";
-	cin>>n1;
-	cout<<"Enter n2:";
-	cin>>n2;
-	prime(n1,n2);
-	int j;
-	for(j=n1+1;j<n2;j++)
-	{
-		is
-	}
-	
+
+int checkPrimeNumber(int n) {
+    bool isPrime = true;
+
+    
+    if (n == 0 || n == 1) {
+        isPrime = false;
+    }
+    else {
+        for(int j = 2; j <= n/2; ++j) {
+            if (n%j == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    return isPrime;
 }
-	
