@@ -24,9 +24,9 @@
  int main()
  {
      Branch b1,b2,b3;
-     b1.getdata(103,"Vishrambag","Sangli");
-     b2.getdata(405,"Shivaji Nagar","Pune");
-     b3.getdata(709,"Andheri","Mumbai");
+     b1.getdata(103,"Production","Sangli");
+     b2.getdata(405,"Manufacture","Pune");
+     b3.getdata(709,"Transport","Mumbai");
 
      b1.Display();
      b2.Display();
